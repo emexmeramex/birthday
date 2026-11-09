@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8e8ec">
+<title>For Bubah — With all my love</title>
+<style>
+:root{--rose:#c65f7d;--deep:#74394f;--ink:#513744;--cream:#fffaf8;--pink:#f8e8ec;--gold:#c59a62}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+button{font:inherit}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:38px 20px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 25%,#fff 0,#fbeef0 48%,#f1dce2 100%)}
+.hero:before,.hero:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #d9a7b6;border-radius:50%;opacity:.35}
+.hero:before{top:-120px;left:-100px}.hero:after{bottom:-140px;right:-90px;width:300px;height:300px}
+.hero-inner{max-width:720px;position:relative;z-index:1}
+.eyebrow{letter-spacing:.28em;text-transform:uppercase;font:11px Arial,sans-serif;color:var(--rose)}
+h1{font-size:clamp(48px,10vw,92px);font-weight:normal;line-height:.98;margin:22px 0 18px;color:var(--deep)}
+.hero p{font-size:clamp(17px,3vw,21px);line-height:1.7;max-width:540px;margin:0 auto 28px}
+.heart{color:var(--rose);font-size:25px;display:inline-block;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{transform:scale(1.25)}}
+.primary,.soft-button{border:0;border-radius:999px;padding:14px 24px;background:var(--deep);color:white;cursor:pointer;box-shadow:0 8px 24px #74394f25;transition:.2s}
+.primary:hover,.soft-button:hover{transform:translateY(-2px);background:#8b4962}
+section{padding:76px 20px}
+.wrap{max-width:980px;margin:auto}
+.section-head{text-align:center;margin-bottom:34px}
+.section-head .eyebrow{margin-bottom:12px;display:block}
+h2{font-size:clamp(32px,6vw,48px);font-weight:normal;color:var(--deep);margin:0 0 12px}
+.section-head p{font-size:17px;line-height:1.7;max-width:600px;margin:auto}
+.scrapbook{background:#fff}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.photo-card{background:#fff;padding:11px 11px 18px;box-shadow:0 10px 28px #58374812;transform:rotate(var(--tilt));transition:.25s}
+.photo-card:hover{transform:rotate(0) translateY(-5px)}
+.photo-card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:#f3dfe5}
+.photo-card p{text-align:center;margin:13px 4px 0;font-size:16px;color:#80566a}
+.note{font:12px Arial,sans-serif;text-align:center;color:#987d89;margin-top:22px}
+.letter-section{background:linear-gradient(140deg,#f9e9ed,#fff9f6)}
+.envelope-area{display:grid;place-items:center;min-height:270px}
+.envelope{position:relative;width:min(330px,85vw);height:205px;background:#e9b9c7;border-radius:5px;cursor:pointer;box-shadow:0 18px 35px #74394f20;transition:transform .3s}
+.envelope:hover{transform:translateY(-5px)}
+.envelope:before{content:"";position:absolute;inset:0;background:#f2cbd5;clip-path:polygon(0 0,50% 58%,100% 0);z-index:2}
+.envelope:after{content:"";position:absolute;inset:0;background:#d99bad;clip-path:polygon(0 100%,0 0,50% 56%,100% 0,100% 100%);z-index:1}
+.seal{position:absolute;z-index:3;left:50%;top:53%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--deep);color:#fff;display:grid;place-items:center;font-size:22px}
+.envelope-label{position:absolute;z-index:4;bottom:17px;left:0;right:0;text-align:center;font:11px Arial,sans-serif;letter-spacing:.15em;color:#74394f}
+.letter{display:none;max-width:740px;margin:10px auto 0;background:#fffdfb;padding:clamp(24px,6vw,52px);box-shadow:0 14px 45px #74394f12;border:1px solid #f1dce2;line-height:1.95;font-size:18px;white-space:pre-line}
+.letter.open{display:block;animation:rise .7s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.reasons{background:#fff}
+.reason-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.reason{padding:18px 19px;background:#fff8f7;border:1px solid #f2e3e5;border-radius:12px;line-height:1.6}
+.reason b{color:var(--rose);margin-right:8px}
+.closing{text-align:center;background:#713d53;color:#fff;padding:76px 20px}
+.closing h2{color:#fff}
+.closing p{max-width:620px;margin:12px auto;line-height:1.8;font-size:18px}
+footer{text-align:center;padding:20px;background:#713d53;color:#f5dfe6;font:11px Arial,sans-serif;letter-spacing:.12em}
+.float-heart{position:fixed;bottom:-30px;z-index:10;pointer-events:none;color:#d47d97;animation:floatUp 5s linear forwards}
+@keyframes floatUp{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@media(max-width:650px){.gallery{grid-template-columns:repeat(2,1fr);gap:12px}.gallery .photo-card:last-child{grid-column:1/-1;width:70%;justify-self:center}.reason-grid{grid-template-columns:1fr}section{padding:58px 17px}.hero{min-height:92svh}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">A little world made just for you</div>
+    <div class="heart">♥</div>
+    <h1>Happy Birthday,<br>Bubah</h1>
+    <p>My Baby. Ratolaka. My Princess.<br>Today is about celebrating the beautiful person you are  and how lucky I am that I get to love you.</p>
+    <button class="primary" onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">Come into your surprise <span aria-hidden="true">♡</span></button>
+  </div>
+</header>
+
+<section class="scrapbook" id="memories">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Little moments, big feelings</span><h2>Our little scrapbook</h2><p>Some moments deserve a place where we can come back to them. Replace these pictures with your favourite photos together.</p></div>
+    <div class="gallery">
+    <div class="photo-card" style="--tilt:-2deg">
+        <img src="Images/photo1.jpg" alt="Our memory 1">
+        <p>One of my favourite memories</p>
+    </div>
+
+    <div class="photo-card" style="--tilt:2deg">
+        <img src="Images/photo2.jpg" alt="Our memory 2">
+        <p>That smile I adore</p>
+    </div>
+
+    <div class="photo-card" style="--tilt:-1deg">
+        <img src="Images/photo3.jpg" alt="Our memory 3">
+        <p>The pretty Princess she is</p>
+    </div>
+
+    <div class="photo-card" style="--tilt:2deg">
+        <img src="Images/photo4.jpg" alt="Our memory 4">
+        <p>My favourite person</p>
+    </div>
+
+    <div class="photo-card" style="--tilt:-2deg">
+        <img src="Images/photo5.jpg" alt="Our memory 5">
+        <p>Her, my beautiful Princess</p>
+    </div>
+
+    <div class="photo-card" style="--tilt:1deg">
+        <img src="Images/photo6.jpg" alt="Our memory 6">
+        <p>Being a badass</p>
+    </div>
+</div>
+    <div class="note"></div>
+  </div>
+</section>
+
+<section class="letter-section" id="letter">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Something from my heart</span><h2>A letter for my princess</h2><p>I've put a little piece of my heart in here. Tap the envelope when you're ready.</p></div>
+    <div class="envelope-area"><button class="envelope" id="envelope" aria-label="Open your birthday letter" onclick="openLetter()"><span class="seal">♥</span><span class="envelope-label">A LETTER FOR MY BUBAH</span></button></div>
+    <article class="letter" id="loveLetter">
+My Bubah, My Baby, my Ratolaka, my Princess,
+
+Happy birthday, my love. ❤️
+
+I wish I could put into words just how much you mean to me. Sometimes I look at you and quietly realise how lucky I am that life brought you into mine. You are so much more than someone I love you are someone I am genuinely grateful for. Thank you for being you: for your heart, your softness, your laughter, your little ways, and all the things that make you uniquely Bubah.
+
+I love you in the big moments, but I also love you in the ordinary ones. I love getting to know you more, hearing your thoughts, sharing silly moments, and having someone whose presence can make an ordinary day feel special. I don't ever want you to feel like you have to be anyone other than yourself with me. You deserve to feel loved, safe, appreciated and chosen  not just on your birthday, but in the little moments every day.
+
+I am grateful for the love you give me, for the patience you show me, and for the chance to be part of your life. I know love is not only about beautiful words. It is also about showing up, being honest, learning each other, keeping promises and choosing one another even when life is not perfect. I want to keep growing in those ways with you. I want my actions to keep giving you reasons to feel secure in my love.
+
+When I think about the future, I see more than special dates and pretty pictures. I see us building something real  making memories, laughing at things only we understand, supporting each other's dreams, facing difficult days as a team and celebrating every little win. I want to keep discovering the world with you and creating a life in which we both feel valued, understood and loved. I don't pretend to know every detail of what tomorrow holds, but I know I would love to keep choosing you as we find out.
+
+My Baby, never forget how special you are. I hope this new year of your life brings you peace, confidence, beautiful opportunities, genuine happiness and all the love your heart can hold. I hope you see yourself with even a little of the admiration I see you with.
+
+Thank you for being my Bubah. Thank you for being someone I get to love. I am proud of you, I appreciate you, and I am so happy that you exist.
+
+Happy birthday, my Princess. Here's to more life, more laughter, more memories and more of us.
+
+I love you, Ratolaka. More than this little page could ever hold.
+
+Always yours,
+Your Vinny ❤️
+    </article>
+  </div>
+</section>
+
+<section class="reasons">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">A few reminders</span><h2>Reasons I adore you</h2><p>And this is only the beginning. There will always be more reasons as I keep getting to know you.</p></div>
+    <div class="reason-grid">
+      <div class="reason"><b>01.</b> The way you make ordinary moments feel special.</div>
+      <div class="reason"><b>02.</b> Your heart, and the care you have for the people you love.</div>
+      <div class="reason"><b>03.</b> Your creativity and the unique way your mind works.</div>
+      <div class="reason"><b>04.</b> Your smile and the happiness it brings me.</div>
+      <div class="reason"><b>05.</b> The little things you do that make you unmistakably you.</div>
+      <div class="reason"><b>06.</b> The person you are and the person you are becoming.</div>
+      <div class="reason"><b>07.</b> The memories we are making together.</div>
+      <div class="reason"><b>08.</b> Simply because you are my Bubah, and I get to love you.</div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="heart">♥</div>
+  <h2>My favourite story is still being written.</h2>
+  <p>And my favourite part is that I get to keep writing it with you. Happy birthday, Bubah. I love you.</p>
+  <p style="font-size:15px;color:#f1cbd7">Forever grateful for you — Vinny</p>
+</section>
+<footer>MADE WITH LOVE, JUST FOR BUBAH ♥</footer>
+<script>
+function openLetter(){
+  const letter=document.getElementById('loveLetter');
+  letter.classList.add('open');
+  document.getElementById('envelope').style.display='none';
+  letter.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function makeHeart(){
+  const h=document.createElement('span');
+  h.className='float-heart';
+  h.textContent=Math.random()>.35?'♥':'♡';
+  h.style.left=Math.random()*100+'vw';
+  h.style.fontSize=(14+Math.random()*18)+'px';
+  h.style.animationDuration=(4+Math.random()*3)+'s';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),7500);
+}
+setInterval(makeHeart,900);
+</script>
+</body>
+</html>
